@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin_dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Correct Chart.js inclusion -->
+    
+       
+</head>
+<body>
+
+    <Header>
+        <button class="back-btn" onclick="window.location.href='home.html'">← Back</button>
+    <div class="header">
+        Phishing Detection Admin Dashboard
+    </div>
+    </Header>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        
+        <a href="admin_user_display.php" id="view-users">View Users</a>
+        <a href="admin_delete_user.php" id="delete-users">Delete Users</a>
+        <a href="admin_insert_url.php" id="add-url">Add a URL</a>
+        <a href="admin_delete_url.php" id="delete-url">Delete a URL</a>
+        <a href="admin_update_url.php" id="update-url">Update a URL</a>
+        <a href="admin_reportedurl_display.php">Reports</a>
+        <a href="feedback.php">Feedback Management</a>
+        <a href="logout.php" class="logout-btn">Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Statistics Section -->
+        <div class="statistics">
+            <div class="stat-box">
+                <h3>Total Users</h3>
+                <p id="total-users">Loading...</p> <!-- Placeholder for dynamic data -->
+            </div>
+            <div class="stat-box">
+                <h3>Total URLs</h3>
+                <p id="total-urls">Loading...</p> <!-- Placeholder for dynamic data -->
+            </div>
+            <div class="stat-box">
+                <h3>Phishing URLs</h3>
+                <p id="phishing-urls">Loading...</p> <!-- Placeholder for dynamic data -->
+            </div>
+        </div>
+
+        <!-- Pie Chart Section -->
+        <div class="chart-container">
+            <canvas id="myPieChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Script for Pie Chart and Data Fetching -->
+    <script>
+        // Initialize the pie chart
+        var ctx = document.getElementById('myPieChart').getContext('2d');
+        var myPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Phishing URLs', 'Legitimate URLs'],
+                datasets: [{
+                    label: 'URL Stats',
+                    data: [0, 0], // Placeholder for dynamic data
+                    backgroundColor: ['#189ae6', '#25d5f8'],
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+            }
+        });
+
+        // Function to fetch statistics before DOM is fully loaded
+        function fetchStatistics() {
+            fetch('fetch_statistics.php')
+                .then(response => response.json())
+                .then(data => {
+                    // Log for debugging (optional)
+                    console.log("Statistics data received:", data);
+
+                    // Immediately update the statistics section with fetched data
+                    document.getElementById('total-users').innerText = data.total_users || 0;
+                    document.getElementById('total-urls').innerText = data.total_urls || 0;
+                    document.getElementById('phishing-urls').innerText = data.phishing_urls || 0;
+
+                    // Immediately update pie chart with phishing vs legitimate URLs
+                    myPieChart.data.datasets[0].data = [
+                        data.phishing_urls || 0,
+                        data.legitimate_urls || 0
+                    ];
+                    myPieChart.update();  // Update the pie chart to reflect new data
+                })
+                .catch(error => {
+                    console.error('Error fetching statistics:', error);
+                    // Fallback in case of error
+                    document.getElementById('total-users').innerText = 'Error';
+                    document.getElementById('total-urls').innerText = 'Error';
+                    document.getElementById('phishing-urls').innerText = 'Error';
+                });
+        }
+
+        // Call fetchStatistics immediately before DOM is fully loaded
+        fetchStatistics();
+    </script>
+
+</body>
+</html>

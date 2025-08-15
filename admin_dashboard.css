@@ -1,0 +1,159 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header Styles */
+.header {
+    background-color: #0d223d;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.back-btn {
+    background-color: #0d223d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-btn:hover {
+    background-color: #1a3b5d;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 200px;
+    background-color: #0d223d;
+    
+    height: 100vh;
+    position: fixed;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #05222c;
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+.statistics {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1;
+    margin: 0 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.stat-box p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Chart Container */
+.chart-container {
+    margin-bottom: 20px;
+    position: relative;
+    height: 300px; /* Adjust height as needed */
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #0d223d;
+     
+    color: white;
+}
+
+/* Button Styles */
+.edit, .delete {
+    background-color: #0d223d;
+    
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit:hover, .delete:hover {
+    background-color: #041217;
+}
+
+/* Navigation Button Styles */
+.nav-btn {
+    margin-top: 20px;
+}
+
+.nav-btn a {
+    margin-right: 10px;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #0d223d;
+
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-btn a:hover {
+    background-color: #021319;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #0d223d;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+

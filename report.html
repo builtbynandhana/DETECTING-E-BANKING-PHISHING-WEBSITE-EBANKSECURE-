@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report a URL</title>
+    <link rel="stylesheet" href="report.css"> <!-- Link to your main CSS -->
+</head>
+<body>
+
+    <header>
+        <nav>
+            <h1>EbankSecure</h1>
+            <ul>
+                <li><a href="userhome.html">Home</a></li>
+                <li><a href="profile.php">Profile</a></li>
+                
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Report a Suspicious URL</h2>
+
+        <form id="reportForm" action="report_submit.php" method="post">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="url">URL to Report</label>
+            <input type="url" id="url" name="url" required>
+
+            <label for="reason">Reason (Optional)</label>
+            <textarea id="reason" name="reason" placeholder="Explain why you're reporting this URL (optional)"></textarea>
+
+            <button type="submit">Submit Report</button>
+        </form>
+
+        <a href="userhome.html" class="back-link">back</a>
+    </div>
+
+    
+
+</body>
+</html>
+

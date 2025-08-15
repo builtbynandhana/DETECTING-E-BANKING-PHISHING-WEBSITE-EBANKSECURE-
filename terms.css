@@ -1,0 +1,139 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.header-container {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 28px;
+    color: #000;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.login-btn {
+    color: #333;
+}
+
+.get-started-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.terms-section {
+    background: #f7f7f7;
+    padding: 50px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.terms-section h2 {
+    color: #000;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+h3 {
+    color: #000;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+footer {
+    background-color: #0d223d;
+    color: #fff;
+    padding: 40px 0;
+}
+
+.footer-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color:  #0d223d;
+}
+
+footer h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer .subscribe input[type="email"] {
+    padding: 10px;
+    border: none;
+    width: 70%;
+    margin-right: 10px;
+}
+
+footer .subscribe button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.social-icons a {
+    margin-right: 15px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+
+footer .copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}

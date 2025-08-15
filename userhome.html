@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reuse the similar styles from your CSS */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav h1 {
+            font-size: 24px;
+            margin-right: auto;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+            color:#0d223d;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color:#0d223d ;
+        }
+
+        .back-btn {
+            background-color: #0d223d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-btn:hover {
+            background-color: #1a3b5d;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            text-align: center;
+            background-color: #0d223d;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+        }
+
+        .dashboard {
+            display: flex;
+            justify-content: space-around;
+            margin: 50px auto;
+            max-width: 80%;
+            flex-wrap: wrap;
+        }
+
+        .dashboard-item {
+            background-color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-item:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .dashboard-item h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-item a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            background-color: #0d223d;
+            border-radius: 5px;
+        }
+
+        .dashboard-item a:hover {
+            background-color:#1a3b5d;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <button class="back-btn" onclick="window.location.href='userhome.html'">← Back</button> 
+        <nav>
+            <h1>User Dashboard</h1>
+            <ul>
+                <li><a href="profile.php">Profile</a></li>
+                <li><a href="logout.php" onclick="logout()">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Welcome to EbankSecure</h2>
+    </section>
+
+    <section class="dashboard">
+        <div class="dashboard-item">
+            <h3>Check a URL</h3>
+            <a href="urlsearch.php">Check Now</a>
+        </div>
+        <div class="dashboard-item">
+            <h3>Report a URL</h3>
+            <a href="report_submit.php">Report Now</a>
+        </div>
+        <div class="dashboard-item">
+            <h3>Display URLs</h3>
+            <a href="display_urls.php">View All</a>
+        </div>
+        <div class="dashboard-item">
+            <h3>Statistics</h3>
+            <a href="display_stat.php">View Stats</a>
+        </div>
+    </section>
+
+    <script>
+        function logout() {
+            window.location.href = 'logout.php';  // Redirect to PHP-based logout
+        }
+    </script>
+
+</body>
+</html>
